@@ -1,0 +1,62 @@
+/* Capability Expansion — Business Intelligence, Investors, Data Rooms, AI, Financial Analysis,
+   Compliance, Meetings, System Monitoring, Marketplace. Reuses .panel/.stat-card/.table-panel/
+   .ops-card/.document-row/.status tokens from styles.css and investment-operations.css. */
+
+.module-note{background:#f4f2ff;border:1px solid #e2ddff;border-radius:11px;padding:13px 15px;font-size:11px;color:#544c8c;line-height:1.6;margin-bottom:18px}
+.module-note b{color:var(--primary)}
+
+.module-stat-card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 15px rgba(28,34,62,.025)}
+.module-stat-card .stat-icon{width:43px;height:43px;border-radius:11px;display:grid;place-items:center;font-size:20px;flex:0 0 auto}
+.module-stat-card span,.module-stat-card small{display:block;color:var(--muted);font-size:11px}
+.module-stat-card strong{font:800 23px Manrope;display:inline-block;margin:3px 7px 0 0}
+
+.flow-steps{display:flex;gap:8px;overflow:auto;margin-bottom:18px;padding-bottom:2px}
+.flow-step{position:relative;flex:1;min-width:118px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:11px}
+.flow-step:after{content:'→';position:absolute;right:-14px;top:26px;color:#9da6b7;z-index:2}
+.flow-step:last-child:after{display:none}
+.flow-step b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#eaf0ff;color:var(--primary);font-size:8px}
+.flow-step strong{display:block;font:700 9.5px Manrope;margin:8px 0 2px}
+.flow-step small{display:block;color:var(--muted);font-size:7.5px}
+
+.confidence-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:11px;background:#eaf0ff;color:var(--primary);font-size:9px;font-weight:700}
+.risk-pill{padding:5px 8px;border-radius:11px;font-size:9px;font-weight:700}
+.risk-pill.low{background:#e5f7f0;color:var(--green)}
+.risk-pill.medium{background:#fff1d8;color:#9b6800}
+.risk-pill.high{background:#fff0e8;color:#be5f35}
+
+.ai-function-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.ai-function-card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;display:flex;gap:12px}
+.ai-function-card .score-ring{flex:0 0 auto;width:48px;height:48px}
+.ai-function-card .score-ring strong{font-size:12px}
+.ai-function-card h3{font:700 12px Manrope;margin:0 0 4px}
+.ai-function-card p{font-size:9px;color:var(--muted);line-height:1.5;margin:0 0 9px}
+.ai-function-card button{border:0;background:#eeebff;color:var(--primary);border-radius:7px;padding:6px 10px;font:700 9px 'DM Sans';cursor:pointer}
+
+.monitor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.monitor-card{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.monitor-card span{display:block;color:var(--muted);font-size:8px;font-weight:700}
+.monitor-card strong{display:block;font:800 19px Manrope;margin:5px 0 4px}
+.monitor-status{display:inline-flex;align-items:center;gap:5px;font-size:8.5px;font-weight:700}
+.monitor-status:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+.monitor-status.degraded:before{background:var(--orange)}
+.monitor-status.down:before{background:var(--red)}
+
+.market-tabs{display:flex;gap:5px;padding:5px;background:#e9edf5;border-radius:10px;margin-bottom:17px;overflow:auto}
+.market-tabs button{border:0;background:transparent;color:#657187;padding:9px 12px;border-radius:7px;white-space:nowrap;font:700 9px 'DM Sans';cursor:pointer}
+.market-tabs button.active{background:#fff;color:var(--primary);box-shadow:0 2px 9px #24345b18}
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.market-card{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fff}
+.market-card .logo{width:38px;height:38px;margin-bottom:10px}
+.market-card h3{font:700 13px Manrope;margin:0 0 4px}
+.market-card p{font-size:10px;color:var(--muted);line-height:1.5;margin:0 0 10px;min-height:44px}
+.market-card .tags{margin-bottom:10px}
+.market-card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:9px;color:var(--muted)}
+.market-panel{display:none}
+.market-panel.active{display:block}
+
+.checklist-mini{display:grid;gap:7px}
+.checklist-mini div{display:flex;align-items:center;gap:8px;font-size:10.5px;color:#3a4356}
+.checklist-mini span{width:17px;height:17px;border-radius:50%;background:#e5f7f0;color:var(--green);display:grid;place-items:center;font-size:9px;flex:0 0 auto}
+
+@media(max-width:900px){.ai-function-grid,.market-grid{grid-template-columns:repeat(2,1fr)}.monitor-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.ai-function-grid,.market-grid,.monitor-grid{grid-template-columns:1fr}.flow-steps{flex-direction:column}.flow-step:after{display:none}}

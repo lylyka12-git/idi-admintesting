@@ -1,0 +1,64 @@
+{
+  "name": "IDI APP",
+  "short_name": "IDI APP",
+  "description": "Innovation & Development Investors Association mobile web app.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#ffffff",
+  "theme_color": "#071c54",
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "lang": "en",
+  "id": "idi-app",
+  "icons": [
+    {
+      "src": "assets/idi-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/idi-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "screenshots": [
+    {
+      "src": "assets/idi-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "IDI APP mobile platform"
+    },
+    {
+      "src": "assets/idi-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "IDI APP web dashboard"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Financial News",
+      "url": "./index.html#public-news"
+    },
+    {
+      "name": "Business Directory",
+      "url": "./index.html#public-directory"
+    },
+    {
+      "name": "Events",
+      "url": "./index.html#public-events"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+/* IDI APP universal platform layer: desktop web, PWA web app, iOS, Android */
+:root{
+  --idi-platform-max:1440px;
+  --idi-touch:44px;
+  --idi-ios-radius:26px;
+  --idi-android-radius:20px;
+  --idi-shadow-soft:0 16px 42px rgba(7,28,84,.10);
+  --idi-shadow-card:0 10px 28px rgba(7,28,84,.075);
+}
+
+html.platform-standalone body{overscroll-behavior-y:none}
+body.platform-ios{font-synthesis-weight:none}
+body.platform-android{--idi-shadow-card:0 8px 22px rgba(7,28,84,.09)}
+.platform-web .landing-main{max-width:var(--idi-platform-max);margin-inline:auto}
+.platform-web main.app-shell.authenticated{max-width:none;margin-left:248px;margin-right:0}
+button,a,[role="button"],.nav-item{min-height:var(--idi-touch)}
+.platform-install-banner{position:fixed;left:18px;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:190;display:none;align-items:center;gap:12px;padding:12px 14px;border-radius:20px;background:linear-gradient(135deg,#071c54,#173f96);color:#fff;box-shadow:0 22px 55px rgba(7,28,84,.28)}
+.platform-install-banner.show{display:flex}
+.platform-install-banner img{width:38px;height:38px;border-radius:12px;object-fit:cover;background:#fff}
+.platform-install-banner div{flex:1;min-width:0}
+.platform-install-banner strong,.platform-install-banner small{display:block}
+.platform-install-banner strong{font:900 12px Manrope}
+.platform-install-banner small{font-size:9px;color:#d7e3f8;margin-top:2px}
+.platform-install-banner button{border:0;border-radius:13px;padding:9px 12px;font:900 10px Manrope;cursor:pointer}
+.platform-install-banner .install-primary{background:#f2cf65;color:#071c54}
+.platform-install-banner .install-close{background:rgba(255,255,255,.12);color:#fff}
+
+@media(min-width:1200px){
+  .landing-section,.home-priority-strip,.landing-stats{max-width:1240px;margin-inline:auto}
+  .public-company-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .management-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .public-partner-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .deal-insight-grid,.executive-report-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:1100px){
+  .platform-web .landing-main{max-width:none}
+  .deal-insight-grid,.executive-report-grid{grid-template-columns:1fr}
+  .report-kpis{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:850px){
+  :root{--idi-touch:46px}
+  body.platform-ios .landing-section,body.platform-ios .priority-panel,body.platform-ios .panel,body.platform-ios .public-company-card,body.platform-ios .public-partner-card{border-radius:var(--idi-ios-radius)!important}
+  body.platform-android .landing-section,body.platform-android .priority-panel,body.platform-android .panel,body.platform-android .public-company-card,body.platform-android .public-partner-card{border-radius:var(--idi-android-radius)!important}
+  .platform-install-banner{left:12px;right:12px;bottom:calc(82px + env(safe-area-inset-bottom));border-radius:22px}
+  .platform-install-banner strong{font-size:11px}.platform-install-banner small{font-size:8px}
+  .home-priority-strip,.landing-section,.landing-stats{max-width:none}
+  .deal-insight-grid,.executive-report-grid{gap:12px;margin:12px 0}
+  .report-kpis,.pipeline-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+  .report-kpis article,.pipeline-summary article{padding:12px!important;border-radius:16px!important}
+  .report-kpis strong,.pipeline-summary strong{font-size:17px!important}
+  .funnel-row,.stage-value-row,.sector-pill-row,.channel-row{grid-template-columns:1fr!important;gap:7px!important}
+  .funnel-row b,.stage-value-row strong,.sector-pill-row b,.channel-row b{text-align:left!important}
+  .insight-row{grid-template-columns:1fr!important}
+  .trend-chart{overflow-x:auto;min-height:205px}
+  .trend-column{min-width:62px}
+  .kanban-board{display:flex!important;overflow-x:auto;gap:10px;padding-bottom:6px;scroll-snap-type:x mandatory}
+  .kanban-column{min-width:78vw;scroll-snap-align:start;min-height:auto!important}
+}
+
+@media(max-width:520px){
+  .report-kpis,.pipeline-summary{grid-template-columns:1fr 1fr!important}
+  .public-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .public-directory-section:not([data-directory-view="list"]):not([data-directory-view="table"]) .public-company-grid,.public-directory-section[data-directory-view="grid"] .public-company-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .management-directory-grid{grid-template-columns:1fr!important}
+  .platform-install-banner{display:none!important}
+}
+
+@media(max-width:780px){
+  .platform-web main.app-shell.authenticated{margin-left:0}
+}
+
+@media(display-mode:standalone){
+  .landing-header,.topbar{padding-top:env(safe-area-inset-top)!important}
+  .landing-page{min-height:100dvh}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
