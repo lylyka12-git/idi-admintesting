@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: idi-connect-hub
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: .
