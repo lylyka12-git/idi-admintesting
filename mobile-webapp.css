@@ -166,3 +166,25 @@ button,a,input,select,textarea{touch-action:manipulation}
   .partner-card-highlight strong{font-size:8.5px!important}
   .partner-hover-panel{display:none!important}
 }
+
+/* Authenticated dashboard: collapse bottom nav to primary tabs + a More sheet, instead of horizontal scroll */
+.app-more-sheet{display:none}
+.nav-item.mobile-nav-more{display:none}
+
+@media(max-width:760px){
+  .app-shell.authenticated.sidebar{overflow:visible!important;white-space:normal!important}
+  .app-shell.authenticated.sidebar nav#mainNav{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:3px!important;width:100%!important;height:100%!important}
+  .app-shell.authenticated.sidebar nav:not(#mainNav){display:none!important}
+  .app-shell.authenticated.sidebar .nav-item{display:none!important}
+  .app-shell.authenticated.sidebar .nav-item.mobile-primary,
+  .app-shell.authenticated.sidebar .nav-item.mobile-nav-more{display:grid!important}
+  .app-shell.authenticated.sidebar .nav-item.mobile-nav-more.active{background:#263557!important;color:#fff!important}
+
+  .app-more-sheet{position:fixed;left:12px;right:12px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:145;padding:18px;border-radius:22px;background:rgba(255,255,255,.98);box-shadow:0 24px 60px rgba(7,28,84,.22);border:1px solid #e2e8f2;backdrop-filter:blur(18px)}
+  .app-more-sheet.open{display:grid!important;gap:9px;max-height:70vh;overflow-y:auto}
+  .app-more-sheet>span{font:900 8px Manrope;letter-spacing:1.2px;color:#173f96}
+  .app-more-list{display:grid;gap:8px}
+  .app-more-row{display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 12px;border:0;border-radius:14px;background:#f5f8ff;color:#102b70;font:900 11px Manrope;text-align:left}
+  .app-more-row span{font-size:16px}
+  .app-more-row em{margin-left:auto;background:#071c54;color:#f2cf65;border-radius:999px;padding:2px 7px;font-size:9px;font-style:normal}
+}

@@ -182,9 +182,9 @@
   <aside class="sidebar app-shell" id="sidebar">
     <div class="brand"><img class="brand-logo" src="assets/idi-logo.jpg" alt="IDI Association logo" /><span>IDI <b>APP</b></span></div>
     <nav id="mainNav">
-      <button class="nav-item active" data-page="overview"><span>⌂</span> Overview</button>
-      <button class="nav-item" data-page="directory"><span>◫</span> Business Directory</button>
-      <button class="nav-item" data-page="news"><span>▥</span> Investment News <em>6</em></button>
+      <button class="nav-item active mobile-primary" data-page="overview"><span>⌂</span> Overview</button>
+      <button class="nav-item mobile-primary" data-page="directory"><span>◫</span> Business Directory</button>
+      <button class="nav-item mobile-primary" data-page="news"><span>▥</span> Investment News <em>6</em></button>
       <button class="nav-item" data-page="partners"><span>◎</span> VC & Strategic Partners</button>
       <button class="nav-item" data-page="investment-flow"><span>⇄</span> Investment Flow</button>
       <button class="nav-item" data-page="investment-operations"><span>◈</span> Investment Operations</button>
@@ -192,8 +192,9 @@
       <button class="nav-item" data-page="memberships"><span>♙</span> Membership Management</button>
       <button class="nav-item" data-page="billing"><span>▣</span> Billing & Renewal</button>
       <button class="nav-item" data-page="pitching"><span>◇</span> Pitching Program <em>12</em></button>
-      <button class="nav-item" data-page="events"><span>◷</span> Events & Invitations</button>
+      <button class="nav-item mobile-primary" data-page="events"><span>◷</span> Events & Invitations</button>
       <button class="nav-item" data-page="pipeline"><span>↗</span> Deal Pipeline</button>
+      <button type="button" class="nav-item mobile-nav-more" id="sidebarMoreToggle"><span>☰</span> More</button>
     </nav>
     <div class="nav-label">Workspace</div>
     <nav>
@@ -209,6 +210,12 @@
     </div>
     <div class="user-card"><div class="avatar" id="sidebarInitials">SK</div><div><strong id="sidebarName">Sokha Kim</strong><small id="sidebarRole">VIP • UNI Holding</small></div><button id="logoutButton" title="Log out">↪</button></div>
   </aside>
+
+  <div class="app-more-sheet" id="appMoreSheet" aria-hidden="true">
+    <button type="button" class="mobile-more-close" id="appMoreClose">×</button>
+    <span>MORE</span>
+    <div class="app-more-list" id="appMoreList"></div>
+  </div>
 
   <main class="app-shell" id="appMain">
     <header class="topbar">
