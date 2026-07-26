@@ -172,8 +172,7 @@ button,a,input,select,textarea{touch-action:manipulation}
 .nav-item.mobile-nav-more{display:none}
 
 @media(max-width:760px){
-  .app-shell.authenticated.sidebar{overflow:visible!important;white-space:normal!important;transition:transform .25s ease!important}
-  .app-shell.authenticated.sidebar.nav-hidden{transform:translateY(140%)!important}
+  .app-shell.authenticated.sidebar{overflow:visible!important;white-space:normal!important}
   .app-shell.authenticated.sidebar nav#mainNav{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:3px!important;width:100%!important;height:100%!important}
   .app-shell.authenticated.sidebar nav:not(#mainNav){display:none!important}
   .app-shell.authenticated.sidebar .nav-item{display:none!important}
