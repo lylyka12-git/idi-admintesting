@@ -107,8 +107,8 @@ button,a,input,select,textarea{touch-action:manipulation}
 @media(max-width:760px){
   .app-shell.authenticated.sidebar{left:10px!important;right:10px!important;bottom:calc(9px + env(safe-area-inset-bottom))!important;height:68px!important;border-radius:23px!important;background:rgba(255,255,255,.97)!important;border:1px solid rgba(7,28,84,.08)!important;box-shadow:0 16px 40px rgba(7,28,84,.18)!important;padding:6px!important}
   .app-shell.authenticated.sidebar nav{gap:2px!important}
-  .app-shell.authenticated.sidebar .nav-item{min-width:64px!important;height:56px!important;border-radius:18px!important;color:#6f7b90!important;font:900 7.5px Manrope!important;background:transparent!important}
-  .app-shell.authenticated.sidebar .nav-item span{font-size:17px!important;color:inherit!important}.app-shell.authenticated.sidebar .nav-item.active{background:#071c54!important;color:#f2cf65!important}
+  .app-shell.authenticated.sidebar .nav-item{min-width:70px!important;height:56px!important;border-radius:18px!important;color:#6f7b90!important;font:900 6.8px Manrope!important;line-height:1.15!important;background:transparent!important;white-space:normal!important;word-break:break-word!important;overflow:hidden!important;padding:6px 3px!important}
+  .app-shell.authenticated.sidebar .nav-item span{font-size:16px!important;color:inherit!important}.app-shell.authenticated.sidebar .nav-item.active{background:#071c54!important;color:#f2cf65!important}
   main.app-shell.authenticated{background:#f1f4f9!important}
   .topbar{height:58px!important;background:rgba(255,255,255,.97)!important;box-shadow:0 5px 20px rgba(7,28,84,.08)!important;border:0!important}
   .page{padding:14px 10px calc(88px + env(safe-area-inset-bottom))!important}
