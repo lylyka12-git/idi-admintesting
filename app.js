@@ -627,4 +627,10 @@ document.getElementById('globalSearch').addEventListener('keydown',e=>{if(e.key=
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('globalSearch').focus()}if(e.key==='Escape'){closeModal();closeNewsModal();closeNewsArticle();closePublicEventRegistration();closePublicPartner();closeKhqrCheckout();closeCompanyProfile();closeCompanyListing();closeMemberRegistration();closeStaffModal();closeInvestmentCase();dealModal.classList.remove('open')}});
 
 renderChart();renderActivity();renderTopCompanies();renderDirectory();renderPublicDirectory();renderPublicPartners();renderInvestmentFlow();renderInvestmentOperations();renderFundingRequests();renderCompanyVerification();renderPitches();renderEvents();renderPublicEvents();renderAdminNews();renderPartners();renderMembers();renderDeals();renderConversations();renderReports();renderAdminStaff();renderStaffPermissionPreview();
-const savedSession=localStorage.getItem('uni-member-session');if(savedSession&&loginProfiles[savedSession])loginAs(savedSession);
+const adminOnlyLogin=loginAs;
+loginAs=function(key){if(key!=='admin'){showToast('Administrator access required','Only the administrator interface is available in this deployment.');return}adminOnlyLogin('admin')};
+document.body.classList.add('admin-only-mode');
+document.querySelector('.login-logo p').textContent='Sign in to the administration portal';
+document.getElementById('loginForm').onsubmit=e=>{e.preventDefault();const form=new FormData(e.target),admin=loginProfiles.admin;if(String(form.get('email')).toLowerCase()!==admin.email||String(form.get('password'))!==admin.password){showToast('Admin login unsuccessful','Please check the administrator credentials.');return}loginAs('admin')};
+document.getElementById('logoutButton').onclick=()=>{localStorage.removeItem('uni-member-session');currentMember=null;document.body.classList.remove('admin-session');document.querySelectorAll('.app-shell').forEach(el=>el.classList.remove('authenticated'));openLogin('admin')};
+loginAs('admin');
