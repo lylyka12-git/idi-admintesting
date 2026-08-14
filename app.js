@@ -122,6 +122,7 @@ function navigate(page){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.page===page));
   document.getElementById('sidebar').classList.remove('open');
   window.scrollTo({top:0,behavior:'smooth'});
+  if(location.hash.slice(1)!==page) history.replaceState(null,'',`#${page}`);
 }
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.go)));

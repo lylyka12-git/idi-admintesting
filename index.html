@@ -182,25 +182,25 @@
   <aside class="sidebar app-shell" id="sidebar">
     <div class="brand"><img class="brand-logo" src="assets/idi-logo.jpg" alt="IDI Association logo" /><span>IDI <b>APP</b></span></div>
     <nav id="mainNav">
-      <button class="nav-item active mobile-primary" data-page="overview"><span>⌂</span> Overview</button>
-      <button class="nav-item mobile-primary" data-page="directory"><span>◫</span> Business Directory</button>
-      <button class="nav-item mobile-primary" data-page="news"><span>▥</span> Investment News <em>6</em></button>
-      <button class="nav-item" data-page="partners"><span>◎</span> VC & Strategic Partners</button>
-      <button class="nav-item" data-page="investment-flow"><span>⇄</span> Investment Flow</button>
-      <button class="nav-item" data-page="investment-operations"><span>◈</span> Investment Operations</button>
-      <button class="nav-item" data-page="funding-request"><span>↗</span> Funding Request</button>
-      <button class="nav-item" data-page="memberships"><span>♙</span> Membership Management</button>
-      <button class="nav-item" data-page="billing"><span>▣</span> Billing & Renewal</button>
-      <button class="nav-item" data-page="pitching"><span>◇</span> Pitching Program <em>12</em></button>
-      <button class="nav-item mobile-primary" data-page="events"><span>◷</span> Events & Invitations</button>
-      <button class="nav-item" data-page="pipeline"><span>↗</span> Deal Pipeline</button>
+      <a href="#overview" class="nav-item active mobile-primary" data-page="overview"><span>⌂</span> Overview</a>
+      <a href="#directory" class="nav-item mobile-primary" data-page="directory"><span>◫</span> Business Directory</a>
+      <a href="#news" class="nav-item mobile-primary" data-page="news"><span>▥</span> Investment News <em>6</em></a>
+      <a href="#partners" class="nav-item" data-page="partners"><span>◎</span> VC & Strategic Partners</a>
+      <a href="#investment-flow" class="nav-item" data-page="investment-flow"><span>⇄</span> Investment Flow</a>
+      <a href="#investment-operations" class="nav-item" data-page="investment-operations"><span>◈</span> Investment Operations</a>
+      <a href="#funding-request" class="nav-item" data-page="funding-request"><span>↗</span> Funding Request</a>
+      <a href="#memberships" class="nav-item" data-page="memberships"><span>♙</span> Membership Management</a>
+      <a href="#billing" class="nav-item" data-page="billing"><span>▣</span> Billing & Renewal</a>
+      <a href="#pitching" class="nav-item" data-page="pitching"><span>◇</span> Pitching Program <em>12</em></a>
+      <a href="#events" class="nav-item mobile-primary" data-page="events"><span>◷</span> Events & Invitations</a>
+      <a href="#pipeline" class="nav-item" data-page="pipeline"><span>↗</span> Deal Pipeline</a>
       <button type="button" class="nav-item mobile-nav-more" id="sidebarMoreToggle"><span>☰</span> More</button>
     </nav>
     <div class="nav-label">Workspace</div>
     <nav>
-      <button class="nav-item" data-page="messages"><span>○</span> Messages <em>4</em></button>
-      <button class="nav-item" data-page="reports"><span>▤</span> Reports</button>
-      <button class="nav-item admin-only-nav" data-page="staff"><span>⚿</span> Admin Staff & Roles</button>
+      <a href="#messages" class="nav-item" data-page="messages"><span>○</span> Messages <em>4</em></a>
+      <a href="#reports" class="nav-item" data-page="reports"><span>▤</span> Reports</a>
+      <a href="#staff" class="nav-item admin-only-nav" data-page="staff"><span>⚿</span> Admin Staff & Roles</a>
     </nav>
     <div class="sidebar-card">
       <span class="spark">✦</span>
@@ -423,5 +423,15 @@
   <script src="connect-hub.js"></script>
   <script src="capability-expansion.js"></script>
   <script src="member-rewards.js"></script>
+  <script>
+    (function(){
+      function routeFromHash(){
+        const page=location.hash.slice(1);
+        if(page&&document.getElementById(`page-${page}`))navigate(page);
+      }
+      window.addEventListener('hashchange',routeFromHash);
+      routeFromHash();
+    })();
+  </script>
 </body>
 </html>
