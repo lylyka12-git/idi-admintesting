@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'business-intel' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'investors' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -148,7 +148,7 @@ const marketplaceData = {
 // ---------- 3. Page markup ----------
 document.getElementById('appMain').insertAdjacentHTML('beforeend', `
 
-<section class="page active" id="page-business-intel">
+<section class="page" id="page-business-intel">
   <div class="page-head"><div><p class="eyebrow">COMPANY DILIGENCE</p><h1>Business Intelligence &amp; Verification</h1><p>Registration, ownership, industry classification, risk scoring and document history behind every verified badge.</p></div></div>
   <div class="stats-grid">
     <div class="module-stat-card"><span class="stat-icon purple">\u26E8</span><div><span>Companies verified</span><strong>1,248</strong></div></div>
@@ -176,7 +176,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </div>
 </section>
 
-<section class="page" id="page-investors">
+<section class="page active" id="page-investors">
   <div class="page-head"><div><p class="eyebrow">CAPITAL RELATIONSHIP MANAGEMENT</p><h1>Investor &amp; Funding Management</h1><p>Investor profiles, onboarding, opportunity matching and portfolio performance.</p></div></div>
   <div class="module-note">Deal-stage funding activity lives in <b>Funding Requests</b> and <b>Deal Pipeline</b>. This workspace tracks the investors themselves.</div>
   <div class="stats-grid">
