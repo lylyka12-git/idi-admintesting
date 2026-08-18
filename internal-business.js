@@ -21,7 +21,7 @@ if(typeFilter&&!typeFilter.querySelector('[value="Digital Platform for Informal 
 document.getElementById('directoryScope')?.addEventListener('change',event=>{internalDirectoryScope=event.target.value;renderDirectory()});
 document.querySelectorAll('#companySearch,#industryFilter,#typeFilter,#directoryMembership,#directoryVerification,#directoryScore').forEach(control=>control.addEventListener('input',()=>setTimeout(renderDirectory,0)));
 
-const pageHead=document.querySelector('#page-directory .page-head');
+const pageHead=document.querySelector('#page-business-mapping .page-head');
 if(pageHead&&!document.getElementById('internalDirectorySummary'))pageHead.insertAdjacentHTML('afterend','<section class="internal-directory-summary" id="internalDirectorySummary"><span>🔒</span><div><small>DIGITAL PLATFORM FOR INFORMAL ECONOMY DEVELOPMENT</small><strong><b id="internalBusinessCount">0</b> internal management records</strong><p>Private records are excluded from public, Guest, member, partner, mapping, and external search views.</p></div><em>ADMIN ONLY</em></section>');
 function renderInternalDirectorySummary(){const panel=document.getElementById('internalDirectorySummary');if(!panel)return;const admin=!!currentMember?.isAdmin;panel.hidden=!admin;document.getElementById('internalBusinessCount').textContent=companies.filter(isInternalBusiness).length;document.querySelector('.internal-scope-filter')?.toggleAttribute('hidden',!admin);const option=typeFilter?.querySelector('[value="Digital Platform for Informal Economy Development"]');if(option)option.hidden=!admin;if(!admin&&typeFilter?.value==='Digital Platform for Informal Economy Development')typeFilter.value=''}
 

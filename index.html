@@ -183,7 +183,7 @@
     <div class="brand"><img class="brand-logo" src="assets/idi-logo.jpg" alt="IDI Association logo" /><span>IDI <b>APP</b></span></div>
     <nav id="mainNav">
       <a href="#overview" class="nav-item" data-page="overview"><span>⌂</span> Overview</a>
-      <a href="#directory" class="nav-item active mobile-primary" data-page="directory"><span>◫</span> Business Directory</a>
+      <a href="#directory" class="nav-item" data-page="directory"><span>◫</span> Business Directory</a>
       <a href="#news" class="nav-item mobile-primary" data-page="news"><span>▥</span> Investment News <em>6</em></a>
       <a href="#partners" class="nav-item" data-page="partners"><span>◎</span> VC & Strategic Partners</a>
       <a href="#investment-flow" class="nav-item" data-page="investment-flow"><span>⇄</span> Investment Flow</a>
@@ -226,16 +226,6 @@
         <button class="primary" id="openApplication">＋ New application</button>
       </div>
     </header>
-
-    <section class="page active" id="page-directory">
-      <div class="page-head"><div><p class="eyebrow">ECOSYSTEM</p><h1>Business Directory</h1><p>Discover verified companies, startups, investors, and partners.</p></div><button class="primary" id="dashboardAddCompany">＋ Add company</button></div>
-      <div class="filter-bar"><div class="field search-field"><span>⌕</span><input id="companySearch" placeholder="Search the directory" /></div><select id="industryFilter"><option value="all">All industries</option><option>Technology</option><option>Agriculture</option><option>Fintech</option><option>Logistics</option><option>Education</option></select><select id="typeFilter"><option value="all">All types</option><option>Startup</option><option>SME</option><option>Investor</option><option>Service Provider</option></select><button class="secondary" id="moreDirectoryFilters">More filters</button></div><div class="directory-advanced" id="directoryAdvanced"><label>Membership<select id="directoryMembership"><option value="all">All memberships</option><option>VIP</option><option>Premium</option><option>Standard</option><option>Guest</option></select></label><label>Verification<select id="directoryVerification"><option value="all">All verification states</option><option value="verified">Verified</option><option value="pending">Pending review</option></select></label><label>Minimum readiness score<input id="directoryScore" type="number" min="0" max="100" value="0" /></label></div>
-      <div class="directory-grid" id="directoryGrid"></div>
-      <section class="admin-change-control change-control-panel">
-        <div class="page-head"><div><p class="eyebrow">GOVERNANCE & AUDIT</p><h2>Directory Change Control</h2><p>Review owner requests, make controlled corrections, and retain a complete update history.</p></div></div>
-        <div class="change-control-grid"><article class="panel"><div class="panel-head"><div><h2>Pending update requests</h2><p>Requests from verified company owners</p></div></div><div class="change-request-list" id="companyChangeRequests"></div></article><article class="panel"><div class="panel-head"><div><h2>Company audit log</h2><p>Who changed what, when, and why</p></div></div><div class="audit-log-list" id="companyAuditLog"></div></article></div>
-      </section>
-    </section>
 
     <section class="page" id="page-news">
       <div class="page-head"><div><p class="eyebrow">CONTENT DISTRIBUTION</p><h1>Investment News</h1><p>Publish trusted investor and government updates by membership tier.</p></div><button class="primary" id="openNewsComposer">＋ Publish news</button></div>
