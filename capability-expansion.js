@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'data-rooms' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'ai-intelligence' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -202,7 +202,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </div>
 </section>
 
-<section class="page active" id="page-data-rooms">
+<section class="page" id="page-data-rooms">
   <div class="page-head"><div><p class="eyebrow">CONFIDENTIAL DEAL DOCUMENTS</p><h1>Document &amp; Data Room Management</h1><p>Secure, permissioned document exchange for every active deal, with version control and access logs.</p></div><button class="secondary" id="dataRoomExport">Export activity log</button></div>
   <div class="stats-grid">
     <div class="module-stat-card"><span class="stat-icon purple">\u25A6</span><div><span>Active data rooms</span><strong>${dataRoomRows.length}</strong></div></div>
@@ -231,7 +231,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </div>
 </section>
 
-<section class="page" id="page-ai-intelligence">
+<section class="page active" id="page-ai-intelligence">
   <div class="page-head"><div><p class="eyebrow">MACHINE-ASSISTED REVIEW</p><h1>AI-Powered Intelligence</h1><p>AI scoring, analysis and generated reports across companies, investors and deals.</p></div></div>
   <div class="stats-grid">
     <div class="module-stat-card"><span class="stat-icon purple">\u2726</span><div><span>Companies AI-scored</span><strong>86</strong></div></div>
