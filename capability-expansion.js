@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'investors' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'data-rooms' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -176,7 +176,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </div>
 </section>
 
-<section class="page active" id="page-investors">
+<section class="page" id="page-investors">
   <div class="page-head"><div><p class="eyebrow">CAPITAL RELATIONSHIP MANAGEMENT</p><h1>Investor &amp; Funding Management</h1><p>Investor profiles, onboarding, opportunity matching and portfolio performance.</p></div></div>
   <div class="module-note">Deal-stage funding activity lives in <b>Funding Requests</b> and <b>Deal Pipeline</b>. This workspace tracks the investors themselves.</div>
   <div class="stats-grid">
@@ -202,7 +202,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </div>
 </section>
 
-<section class="page" id="page-data-rooms">
+<section class="page active" id="page-data-rooms">
   <div class="page-head"><div><p class="eyebrow">CONFIDENTIAL DEAL DOCUMENTS</p><h1>Document &amp; Data Room Management</h1><p>Secure, permissioned document exchange for every active deal, with version control and access logs.</p></div><button class="secondary" id="dataRoomExport">Export activity log</button></div>
   <div class="stats-grid">
     <div class="module-stat-card"><span class="stat-icon purple">\u25A6</span><div><span>Active data rooms</span><strong>${dataRoomRows.length}</strong></div></div>
