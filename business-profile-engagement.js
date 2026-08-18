@@ -4,9 +4,9 @@ const pageItem=['profile-studio','◉','Business Profile Studio','Profile analyt
 if(!systemPageCatalog.some(item=>item[0]===pageItem[0]))systemPageCatalog.push(pageItem);
 Object.values(loginProfiles).forEach(profile=>{if(profile.isAdmin||profile.organization!=='Independent'){if(!profile.allowed.includes('profile-studio'))profile.allowed.push('profile-studio')}});
 const workspace=document.querySelectorAll('#sidebar nav')[1];
-workspace.insertAdjacentHTML('afterbegin','<button class="nav-item" data-page="profile-studio"><span>◉</span> Business Profile Studio</button>');
+workspace.insertAdjacentHTML('afterbegin','<button class="nav-item active" data-page="profile-studio"><span>◉</span> Business Profile Studio</button>');
 document.querySelector('[data-page="profile-studio"]').onclick=()=>{navigate('profile-studio');renderBusinessProfileStudio()};
-document.getElementById('appMain').insertAdjacentHTML('beforeend',`<section class="page" id="page-profile-studio"><div class="page-head"><div><p class="eyebrow">OWNER GROWTH WORKSPACE</p><h1>Business Profile Studio</h1><p>Understand discovery, engagement, and conversion—then publish updates that keep your profile active.</p></div><div class="page-actions"><button class="secondary" id="previewStudioProfile">Preview profile</button><button class="primary" id="shareStudioProfile">↗ Share profile</button></div></div><div id="businessProfileStudio"></div></section>`);
+document.getElementById('appMain').insertAdjacentHTML('beforeend',`<section class="page active" id="page-profile-studio"><div class="page-head"><div><p class="eyebrow">OWNER GROWTH WORKSPACE</p><h1>Business Profile Studio</h1><p>Understand discovery, engagement, and conversion—then publish updates that keep your profile active.</p></div><div class="page-actions"><button class="secondary" id="previewStudioProfile">Preview profile</button><button class="primary" id="shareStudioProfile">↗ Share profile</button></div></div><div id="businessProfileStudio"></div></section>`);
 
 function hash(value){return [...value].reduce((sum,char)=>(sum*31+char.charCodeAt(0))%10007,17)}
 function loadStore(key){try{return JSON.parse(localStorage.getItem(key)||'{}')}catch{return{}}}
