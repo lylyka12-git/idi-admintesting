@@ -61,8 +61,6 @@ openCompanyProfile=function(name){governedCompanyProfile(name);const company=com
 const governedRenderMembers=renderMembers;
 renderMembers=function(){governedRenderMembers();document.querySelectorAll('[data-member-manage]').forEach(button=>button.onclick=()=>openMembershipChange(button.dataset.memberManage,'admin'))};
 
-const profileButton=document.getElementById('profileButton');
-profileButton.onclick=()=>currentMember?.isAdmin?showToast('Admin profile',`${currentMember.name} • ${currentMember.role}`):openMembershipChange(currentMember?.email,'request');
 const billingHead=document.querySelector('#page-billing .page-head');if(billingHead){const button=document.createElement('button');button.className='secondary member-update-request';button.textContent='Request membership update';button.onclick=()=>openMembershipChange(currentMember?.email,'request');billingHead.append(button)}
 
 const partnerForm=document.getElementById('partnerOnboardingForm');

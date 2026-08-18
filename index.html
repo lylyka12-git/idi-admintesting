@@ -182,8 +182,8 @@
   <aside class="sidebar app-shell" id="sidebar">
     <div class="brand"><img class="brand-logo" src="assets/idi-logo.jpg" alt="IDI Association logo" /><span>IDI <b>APP</b></span></div>
     <nav id="mainNav">
-      <a href="#overview" class="nav-item active mobile-primary" data-page="overview"><span>⌂</span> Overview</a>
-      <a href="#directory" class="nav-item mobile-primary" data-page="directory"><span>◫</span> Business Directory</a>
+      <a href="#overview" class="nav-item" data-page="overview"><span>⌂</span> Overview</a>
+      <a href="#directory" class="nav-item active mobile-primary" data-page="directory"><span>◫</span> Business Directory</a>
       <a href="#news" class="nav-item mobile-primary" data-page="news"><span>▥</span> Investment News <em>6</em></a>
       <a href="#partners" class="nav-item" data-page="partners"><span>◎</span> VC & Strategic Partners</a>
       <a href="#investment-flow" class="nav-item" data-page="investment-flow"><span>⇄</span> Investment Flow</a>
@@ -227,49 +227,7 @@
       </div>
     </header>
 
-    <section class="page active" id="page-overview">
-      <div class="page-head">
-        <div><p class="eyebrow" id="dashboardEyebrow">VIP MEMBER DASHBOARD</p><h1 id="dashboardGreeting">Good morning, Sokha.</h1><p id="dashboardSubtitle">Here’s what’s happening across your business ecosystem.</p></div>
-        <div class="page-actions"><button class="secondary" id="overviewExport">Export report</button><button class="primary" data-go="events">Create event</button></div>
-      </div>
-      <div class="renewal-banner" id="membershipRenewalBanner"><div class="renewal-banner-icon">!</div><div><strong id="renewalBannerTitle">Membership renewal approaching</strong><p id="renewalBannerText">Renew now to keep uninterrupted access to IDI APP.</p></div><button class="primary" data-go="billing">Renew membership</button></div>
-      <div class="member-access-banner" id="memberAccessBanner"><span>◆</span><div><strong id="accessTitle">VIP full ecosystem access</strong><p id="accessDescription">Immediate investment intelligence, exclusive campaigns, priority events, and investor connections.</p></div><button class="secondary" id="profileButton">View my profile</button></div>
-      <div class="stats-grid">
-        <article class="stat-card"><div class="stat-icon purple">◫</div><div><span>Verified companies</span><strong>1,248</strong><small class="up">↑ 8.4%</small></div></article>
-        <article class="stat-card"><div class="stat-icon green">◇</div><div><span>Pitch applications</span><strong>86</strong><small class="up">↑ 12 this week</small></div></article>
-        <article class="stat-card"><div class="stat-icon orange">◎</div><div><span>Active investors</span><strong>174</strong><small class="up">↑ 6.2%</small></div></article>
-        <article class="stat-card"><div class="stat-icon blue">◷</div><div><span>Event RSVPs</span><strong>2,460</strong><small>78% accepted</small></div></article>
-      </div>
-
-      <div class="dashboard-grid">
-        <article class="panel wide">
-          <div class="panel-head"><div><h2>Application performance</h2><p>Monthly submissions and shortlisted companies</p></div><select><option>Last 6 months</option></select></div>
-          <div class="chart-wrap">
-            <div class="chart-legend"><span><i class="dot violet"></i>Applications</span><span><i class="dot mint"></i>Shortlisted</span></div>
-            <div class="bar-chart" id="barChart"></div>
-          </div>
-        </article>
-        <article class="panel activity-panel">
-          <div class="panel-head"><div><h2>Live activity</h2><p>Updates from your network</p></div><button class="text-btn">View all</button></div>
-          <div class="activity-list" id="activityList"></div>
-        </article>
-        <article class="panel companies-panel">
-          <div class="panel-head"><div><h2>Top-scoring companies</h2><p>AI and judge combined scores</p></div><button class="text-btn" data-go="pitching">Review all →</button></div>
-          <div class="company-list" id="topCompanies"></div>
-        </article>
-        <article class="panel event-panel">
-          <div class="panel-head"><div><h2>Next event</h2><p>Invitation performance</p></div><button class="text-btn" data-go="events">Calendar →</button></div>
-          <div class="next-event">
-            <div class="date-block"><strong>12</strong><span>JUL</span></div>
-            <div><h3>Cambodia Investment Forum 2026</h3><p>Phnom Penh • 8:30 AM</p></div>
-          </div>
-          <div class="rsvp-row"><div><strong>284</strong><span>Accepted</span></div><div><strong>46</strong><span>Maybe</span></div><div><strong>31</strong><span>Pending</span></div></div>
-          <div class="progress"><i style="width:78%"></i></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="page" id="page-directory">
+    <section class="page active" id="page-directory">
       <div class="page-head"><div><p class="eyebrow">ECOSYSTEM</p><h1>Business Directory</h1><p>Discover verified companies, startups, investors, and partners.</p></div><button class="primary" id="dashboardAddCompany">＋ Add company</button></div>
       <div class="filter-bar"><div class="field search-field"><span>⌕</span><input id="companySearch" placeholder="Search the directory" /></div><select id="industryFilter"><option value="all">All industries</option><option>Technology</option><option>Agriculture</option><option>Fintech</option><option>Logistics</option><option>Education</option></select><select id="typeFilter"><option value="all">All types</option><option>Startup</option><option>SME</option><option>Investor</option><option>Service Provider</option></select><button class="secondary" id="moreDirectoryFilters">More filters</button></div><div class="directory-advanced" id="directoryAdvanced"><label>Membership<select id="directoryMembership"><option value="all">All memberships</option><option>VIP</option><option>Premium</option><option>Standard</option><option>Guest</option></select></label><label>Verification<select id="directoryVerification"><option value="all">All verification states</option><option value="verified">Verified</option><option value="pending">Pending review</option></select></label><label>Minimum readiness score<input id="directoryScore" type="number" min="0" max="100" value="0" /></label></div>
       <div class="directory-grid" id="directoryGrid"></div>
