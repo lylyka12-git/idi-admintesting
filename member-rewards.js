@@ -7,7 +7,7 @@ if (!systemPageCatalog.some(row => row[0] === 'rewards')) systemPageCatalog.push
 Object.values(loginProfiles).forEach(profile => { if (!profile.allowed.includes('rewards')) profile.allowed.push('rewards'); });
 
 const expansionNav = document.getElementById('expansionNav');
-(expansionNav || document.querySelectorAll('#sidebar nav')[1]).insertAdjacentHTML('beforeend', `<button class="nav-item" data-page="rewards"><span>\u25C6</span> Member Rewards <em id="rewardsNavCount"></em></button>`);
+(expansionNav || document.querySelectorAll('#sidebar nav')[1]).insertAdjacentHTML('beforeend', `<button class="nav-item active" data-page="rewards"><span>\u25C6</span> Member Rewards <em id="rewardsNavCount"></em></button>`);
 document.querySelector('[data-page="rewards"]').onclick = () => navigate('rewards');
 
 // visible in the profile: topbar badge + sidebar mini line
@@ -86,7 +86,7 @@ loginAs = function (key) { rewardsLoginBase(key); loadRewardsState(key); updateR
 
 // ---------- 4. Page markup ----------
 document.getElementById('appMain').insertAdjacentHTML('beforeend', `
-<section class="page" id="page-rewards">
+<section class="page active" id="page-rewards">
   <div class="page-head"><div><p class="eyebrow">LOYALTY & ENGAGEMENT</p><h1>Member Rewards &amp; Redemption</h1><p>Earn points for using IDI APP, then redeem them for partner discounts and event pricing.</p></div></div>
   <div class="rewards-hero">
     <div class="balance"><strong id="rewardsBalanceBig">0</strong><span>Points available</span></div>

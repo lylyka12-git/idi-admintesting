@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'marketplace' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -336,7 +336,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </article>
 </section>
 
-<section class="page active" id="page-marketplace">
+<section class="page" id="page-marketplace">
   <div class="page-head"><div><p class="eyebrow">BEYOND THE DEAL</p><h1>Ecosystem Marketplace</h1><p>Service providers, expert advisors, training and shared knowledge across the ecosystem.</p></div></div>
   <div class="market-tabs" id="marketTabs">
     <button class="active" data-market-tab="opportunities">Opportunities</button>
