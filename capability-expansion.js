@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'marketplace' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -317,7 +317,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </article>
 </section>
 
-<section class="page active" id="page-system-monitoring">
+<section class="page" id="page-system-monitoring">
   <div class="page-head"><div><p class="eyebrow">PLATFORM HEALTH</p><h1>System Monitoring</h1><p>Uptime, service status and background jobs. For user roles, approvals and content, see <b>Admin Staff &amp; Roles</b>, <b>Approvals &amp; Verification</b>, and <b>All Page Management</b>.</p></div></div>
   <div class="monitor-grid">
     <div class="monitor-card"><span>UPTIME (30 DAYS)</span><strong>99.98%</strong><i class="monitor-status">Operational</i></div>
@@ -336,7 +336,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </article>
 </section>
 
-<section class="page" id="page-marketplace">
+<section class="page active" id="page-marketplace">
   <div class="page-head"><div><p class="eyebrow">BEYOND THE DEAL</p><h1>Ecosystem Marketplace</h1><p>Service providers, expert advisors, training and shared knowledge across the ecosystem.</p></div></div>
   <div class="market-tabs" id="marketTabs">
     <button class="active" data-market-tab="opportunities">Opportunities</button>
