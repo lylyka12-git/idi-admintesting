@@ -1,4 +1,4 @@
-const IDI_CACHE='idi-app-v38';
+const IDI_CACHE='idi-app-v39';
 const CORE_ASSETS=[
   './',
   './index.html',

@@ -28,7 +28,7 @@ const expansionWorkspaceNav = document.querySelectorAll('#sidebar nav')[1];
 expansionWorkspaceNav.insertAdjacentHTML('afterend', `
 <div class="nav-label">Platform Expansion</div>
 <nav id="expansionNav">
-  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav' : ''}${key === 'meetings' ? ' active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
+  ${capabilityPageItems.map(([key, icon, title]) => `<button class="nav-item${key === 'system-monitoring' ? ' admin-only-nav active' : ''}" data-page="${key}"><span>${icon}</span> ${title}</button>`).join('')}
 </nav>`);
 document.querySelectorAll(capabilityKeys.map(k => `[data-page="${k}"]`).join(',')).forEach(button => {
   button.onclick = () => navigate(button.dataset.page);
@@ -298,7 +298,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   <div class="module-note" style="margin-top:16px">Workflow controls are informed by <b>FATF</b> risk-based due diligence, <b>OECD</b> responsible-business-conduct principles, and <b>IFC</b> environmental &amp; social review. Local securities, tax, and licensing requirements should be finalized with qualified Cambodian counsel.</div>
 </section>
 
-<section class="page active" id="page-meetings">
+<section class="page" id="page-meetings">
   <div class="page-head"><div><p class="eyebrow">COMMUNICATION CENTER</p><h1>Meetings &amp; Video Calls</h1><p>Schedule and track investor meetings. For messages and notifications, see <b>Messages</b> and <b>Notification Center</b>.</p></div><button class="primary" id="scheduleMeeting">\uFF0B Schedule meeting</button></div>
   <div class="stats-grid">
     <div class="module-stat-card"><span class="stat-icon purple">\u25B6</span><div><span>Meetings scheduled</span><strong>14</strong></div></div>
@@ -317,7 +317,7 @@ document.getElementById('appMain').insertAdjacentHTML('beforeend', `
   </article>
 </section>
 
-<section class="page" id="page-system-monitoring">
+<section class="page active" id="page-system-monitoring">
   <div class="page-head"><div><p class="eyebrow">PLATFORM HEALTH</p><h1>System Monitoring</h1><p>Uptime, service status and background jobs. For user roles, approvals and content, see <b>Admin Staff &amp; Roles</b>, <b>Approvals &amp; Verification</b>, and <b>All Page Management</b>.</p></div></div>
   <div class="monitor-grid">
     <div class="monitor-card"><span>UPTIME (30 DAYS)</span><strong>99.98%</strong><i class="monitor-status">Operational</i></div>
